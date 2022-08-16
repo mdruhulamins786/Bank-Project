@@ -1,11 +1,9 @@
 // btn-deposit
-
+let totalB = 1240;
 document.getElementById("btn-deposit").addEventListener("click", () => {
   const depositFiledElement = document.getElementById("deposit-field");
   const depositFiledString = depositFiledElement.value;
   const depositFiled = parseFloat(depositFiledString);
-
-  depositFiledElement.value = "";
 
   if (isNaN(depositFiled)) {
     alert("Please enter a valid number");
@@ -22,7 +20,12 @@ document.getElementById("btn-deposit").addEventListener("click", () => {
 
   const addBalance = document.getElementById("add-money");
   const addBalanceString = addBalance.innerText;
-  const totalAdd = parseFloat(addBalanceString);
-  const totalBalance = totalAmount + totalAdd;
+  const totalAdd = document.getElementById("deposit-total");
+
+  console.log(totalAdd.value);
+
+  const totalBalance = totalB + parseInt(totalAdd.innerText);
   addBalance.innerText = totalBalance;
+
+  depositFiledElement.value = "";
 });
