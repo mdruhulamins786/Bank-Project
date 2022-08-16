@@ -26,6 +26,6 @@ document.getElementById("btn-withdraw").addEventListener("click", () => {
   const totalAmount = depositFiled + depositTotalAmount;
   depositTotal.innerText = totalAmount;
 
-  const totalWithdraw = totalAdd - totalAmount;
+  const totalWithdraw = totalAdd - depositFiled;
   addBalance.innerText = totalWithdraw;
 });
